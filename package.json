@@ -14,7 +14,8 @@
     "clean": "lerna run clean && lerna clean -y",
     "publish": "lerna publish",
     "version:bump": "lerna version",
-    "security:audit": "npm audit --workspaces"
+    "security:audit": "npm audit --workspaces",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,9 @@
   },
   "homepage": "https://github.com/Mosas2000/SF-SDK#readme",
   "devDependencies": {
+    "@commitlint/cli": "^18.6.1",
+    "@commitlint/config-conventional": "^18.6.3",
+    "husky": "^8.0.3",
     "lerna": "^8.2.4",
     "typescript": "^5.9.3",
     "vitest": "^1.6.1"
