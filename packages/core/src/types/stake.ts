@@ -142,7 +142,7 @@ export const MAX_STAKE_AMOUNT = Number.MAX_SAFE_INTEGER;
 export function isStakeInfo(value: unknown): value is StakeInfo {
   if (typeof value !== 'object' || value === null) return false;
   const obj = value as Record<string, unknown>;
-  return typeof obj.address === 'string' && typeof obj.amount === 'number';
+  return typeof obj['address'] === 'string' && typeof obj['amount'] === 'number';
 }
 
 /**
@@ -152,11 +152,11 @@ export function isStakeStats(value: unknown): value is StakeStats {
   if (typeof value !== 'object' || value === null) return false;
   const obj = value as Record<string, unknown>;
   return (
-    typeof obj.totalStaked === 'number' &&
-    typeof obj.minStake === 'number' &&
-    typeof obj.maxStake === 'number' &&
-    typeof obj.averageStake === 'number' &&
-    typeof obj.medianStake === 'number'
+    typeof obj['totalStaked'] === 'number' &&
+    typeof obj['minStake'] === 'number' &&
+    typeof obj['maxStake'] === 'number' &&
+    typeof obj['averageStake'] === 'number' &&
+    typeof obj['medianStake'] === 'number'
   );
 }
 
