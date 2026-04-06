@@ -42,8 +42,8 @@
     "skipLibCheck": true,
     
     // Advanced
-    "composite": true,
-    "incremental": true
+    "composite": false,
+    "incremental": false
   },
   "exclude": [
     "node_modules",
