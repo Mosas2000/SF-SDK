@@ -1,0 +1,21 @@
+# Compiled output
+dist/
+build/
+*.js
+*.d.ts
+*.tsbuildinfo
+
+# Keep configuration files
+!*.config.js
+!vitest.config.js
+!commitlint.config.js
+
+# Test files are TypeScript
+!**/*.test.js
+!**/*.spec.js
+
+# Source maps
+*.map
+
+# Package metadata
+package-lock.json
