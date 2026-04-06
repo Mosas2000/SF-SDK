@@ -95,9 +95,9 @@ export const PROPOSAL_RULES = {
 
 /**
  * Regular expression pattern for validating Stacks addresses
- * Matches ST (testnet) or SP (mainnet) followed by 38 alphanumeric characters
+ * Matches ST (testnet) or SP (mainnet) followed by 39 alphanumeric characters
  */
-export const STACKS_ADDRESS_PATTERN = /^(ST|SP)[A-Z0-9]{38}$/;
+export const STACKS_ADDRESS_PATTERN = /^(ST|SP)[A-Z0-9]{39}$/;
 
 /**
  * Regular expression pattern for validating transaction IDs

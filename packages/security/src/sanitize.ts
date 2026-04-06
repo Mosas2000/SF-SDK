@@ -24,9 +24,10 @@ const HTML_TAG_PATTERN = /<\/?[a-z][^>]*>/gi;
 const HTML_ENTITY_PATTERN = /&(?:#x?[0-9a-f]+|[a-z]+);/gi;
 
 /**
- * Regex matching common JavaScript event handler attributes
+ * Regex matching common JavaScript event handler attributes with their values
+ * Matches patterns like: onclick="alert(1)", onerror=alert(1), onload="x"
  */
-const EVENT_HANDLER_PATTERN = /\bon\w+\s*=/gi;
+const EVENT_HANDLER_PATTERN = /\s*on\w+\s*=\s*[^\s>]*/gi;
 
 /**
  * Control characters (U+0000–U+001F except tab, newline, carriage return)
@@ -37,6 +38,7 @@ const CONTROL_CHAR_PATTERN = /[\x00-\x08\x0B\x0C\x0E-\x1F]/g;
 
 /**
  * Strip all HTML tags from a string, returning plain text
+ * Recursively strips tags to handle nested/malformed HTML
  *
  * This is intentionally aggressive: it removes ALL tag-like content
  * rather than trying to allow "safe" tags
@@ -45,7 +47,16 @@ const CONTROL_CHAR_PATTERN = /[\x00-\x08\x0B\x0C\x0E-\x1F]/g;
  * @returns Plain text with all HTML tags removed
  */
 export function stripHtmlTags(input: string): string {
-  return input.replace(HTML_TAG_PATTERN, '');
+  let result = input;
+  let previous = '';
+  
+  // Keep stripping until no more tags remain (handles nested tags)
+  while (result !== previous) {
+    previous = result;
+    result = result.replace(HTML_TAG_PATTERN, '');
+  }
+  
+  return result;
 }
 
 /**

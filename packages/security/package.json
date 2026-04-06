@@ -1,0 +1,54 @@
+{
+  "name": "@sfsec/security",
+  "version": "0.1.0",
+  "description": "Security utilities for SFSec SDK - input validation and sanitization",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "security",
+    "validation",
+    "sanitization",
+    "xss-prevention",
+    "input-validation",
+    "stacks",
+    "blockchain"
+  ],
+  "author": "SFSec",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mosas2000/SF-SDK.git",
+    "directory": "packages/security"
+  },
+  "bugs": {
+    "url": "https://github.com/Mosas2000/SF-SDK/issues"
+  },
+  "homepage": "https://github.com/Mosas2000/SF-SDK/tree/main/packages/security#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  }
+}

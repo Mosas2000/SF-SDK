@@ -27,11 +27,11 @@ export function isBoolean(value: unknown): value is boolean {
 
 /**
  * Validates that a value is a valid Stacks principal address
- * Format: ST or SP followed by 38 alphanumeric characters
+ * Format: ST or SP followed by 39 alphanumeric characters
  */
 export function isPrincipal(value: unknown): value is string {
   if (!isString(value)) return false;
-  return /^(ST|SP)[A-Z0-9]{38}$/.test(value);
+  return /^(ST|SP)[A-Z0-9]{39}$/.test(value);
 }
 
 /**
