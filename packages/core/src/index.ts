@@ -6,3 +6,5 @@
  */
 
 export * from './types';
+export * from './stacks-api';
+export * from './stacks-client';
