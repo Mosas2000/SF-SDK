@@ -1,0 +1,57 @@
+{
+  "name": "@sfsec/contracts",
+  "version": "0.1.0",
+  "description": "Smart contract interaction utilities for SFSec SDK",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "echo 'Linting not configured yet'",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "sfsec",
+    "sdk",
+    "stacks",
+    "blockchain",
+    "contracts",
+    "clarity"
+  ],
+  "author": "SFSec",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Mosas2000/SF-SDK.git",
+    "directory": "packages/contracts"
+  },
+  "bugs": {
+    "url": "https://github.com/Mosas2000/SF-SDK/issues"
+  },
+  "homepage": "https://github.com/Mosas2000/SF-SDK#readme",
+  "dependencies": {
+    "@sfsec/core": "^0.1.0",
+    "@sfsec/security": "^0.1.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.3.0",
+    "vitest": "^1.6.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
