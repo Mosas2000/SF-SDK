@@ -216,6 +216,29 @@ export interface ApiError {
 export type ApiResponse<T> = ApiSuccess<T> | ApiError;
 
 /**
+ * Transaction status from Stacks API
+ */
+export type TransactionStatus = 
+  | 'success' 
+  | 'pending' 
+  | 'failed' 
+  | 'abort_by_response' 
+  | 'abort_by_post_condition' 
+  | 'unknown';
+
+/**
+ * Network error response structure
+ */
+export interface NetworkErrorResponse {
+  success: false;
+  error: {
+    code: string;
+    message: string;
+    details?: any;
+  };
+}
+
+/**
  * Response from get-proposal-count read-only function.
  */
 export type ProposalCountResponse = number;

@@ -1,0 +1,10 @@
+      if (!response.ok) {
+        return {
+          success: false,
+          error: {
+            message: response.statusText,
+            status: response.status,
+          },
+          timestamp: Date.now(),
+        };
+      }
