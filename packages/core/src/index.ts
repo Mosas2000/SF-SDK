@@ -8,3 +8,6 @@
 export * from './types';
 export * from './stacks-api';
 export * from './stacks-client';
+export * from './proposal-methods';
+export * from './voting-methods';
+export * from './staking-methods';
