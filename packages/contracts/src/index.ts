@@ -5,5 +5,12 @@
  * smart contracts, including proposals, voting, and staking.
  */
 
-// Export contract interaction utilities when implemented
+// Export contract helpers
+export {
+  ContractResponseHandler,
+  TransactionBuilder,
+  ContractConverter,
+  ErrorRecovery,
+} from './helpers';
+
 export const version = '0.1.0';
