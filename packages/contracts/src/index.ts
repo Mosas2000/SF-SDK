@@ -13,4 +13,15 @@ export {
   ErrorRecovery,
 } from './helpers';
 
+// Export transaction polling
+export {
+  pollTxStatus,
+  pollTxStatusAsync,
+  type PollConfig,
+  type PollCallbacks,
+  type PollResult,
+  type TxStatus,
+  type TxStatusFetcher,
+} from './poll-tx';
+
 export const version = '0.1.0';
